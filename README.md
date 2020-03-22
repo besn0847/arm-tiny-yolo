@@ -13,10 +13,14 @@ docker run -d --name arm-tiny-yolo -v <conf_dir>:/conf -p 5000:5000 arm-tiny-yol
 
 To test an image with the Yolo WebService : 
 ```bash
-curl -X PUT -F image_file=@/home/franck/Sandbox/x86-yolo/image.jpg http://localhost:5000/process
+curl -X PUT -F image_file=@./soccer.jpeg http://localhost:5000/process
 ```
 Result is something like :
-Class: cat with confidence: 0.9518834352493286 
+Class: person with confidence: 0.6138224005699158
+Class: person with confidence: 0.4564242362976074
+Class: person with confidence: 0.7284687161445618
+Class: sports ball with confidence: 0.46966585516929626
+Class: sports ball with confidence: 0.6894618272781372
 
 Based on Alpine Linux 3.8, Python 3.6 and OpenCV 3.4.4.
 
