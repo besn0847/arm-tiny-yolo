@@ -51,15 +51,8 @@ def upload_file():
                         class_id = np.argmax(scores)
                         confidence = scores[class_id]
                         if confidence > conf_threshold :
-                                center_x = int(detection[0] * Width)
-                                center_y = int(detection[1] * Height)
-                                w = int(detection[2] * Width)
-                                h = int(detection[3] * Height)
-                                x = center_x - w / 2
-                                y = center_y - h / 2
                                 class_ids.append(class_id)
                                 confidences.append(float(confidence))
-                                boxes.append([x, y, w, h])
 
         output = ""
         for i in range(0,len(class_ids)):
