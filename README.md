@@ -17,11 +17,13 @@ curl -X PUT -F image_file=@./soccer.jpeg http://localhost:5000/process
 ```
 
 ####Result is something like :
+```bash
  Class: person with confidence: 0.6138224005699158
  Class: person with confidence: 0.4564242362976074
  Class: person with confidence: 0.7284687161445618
  Class: sports ball with confidence: 0.46966585516929626
  Class: sports ball with confidence: 0.6894618272781372
+```
  
 Based on Alpine Linux 3.8, Python 3.6 and OpenCV 3.4.4.
 
