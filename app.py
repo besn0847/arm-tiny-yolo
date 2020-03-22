@@ -1,6 +1,5 @@
 import os
 import cv2
-import time
 import numpy as np
 from flask import Flask, render_template, request
 
@@ -38,10 +37,7 @@ def upload_file():
 
         blob = cv2.dnn.blobFromImage(image, 1 / 255.0, (416,416), (0,0,0), True, crop=False)
         net.setInput(blob)
-        start = time.time()
         outs = net.forward(get_output_layers(net))
-        end = time.time()
-        print("[INFO] YOLO took {:.6f} seconds".format(end - start))
 
         class_ids = []
         confidences = []
